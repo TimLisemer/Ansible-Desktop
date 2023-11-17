@@ -22,10 +22,10 @@
     when: package_install_result.failed
 
   - name: Add Flathub remote
-      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
   - name: Install Flatpak applications
-      flatpak:
+    flatpak:
         name: "{{ item }}"
         state: present
       loop:
