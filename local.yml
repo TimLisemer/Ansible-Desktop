@@ -50,6 +50,7 @@
       - org.gtk.Gtk3theme.adw-gtk3-dark	
       - org.pipewire.Helvum
       - re.sonny.Workbench
+      - io.gitlab.news_flash.NewsFlash
 
   - name: copy Nextcloud - sync-exclude.lst
     copy:
