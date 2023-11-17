@@ -1,0 +1,25 @@
+.cache
+log
+.local
+.config/Nextcloud
+.docker
+.var
+.rustup
+.java
+.cargo
+node_modules/
+Games/Storage
+.mozilla
+venv
+.config/dconf
+.VirtualBox VMs
+.config/Code - OSS/Backups
+.config/Electron
+.steam
+.config/discord/Cache
+Cache
+cache
+/cache
+/Cache
+.config/mimeapps
+/build

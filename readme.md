@@ -1,0 +1,1 @@
+sudo ansible-pull -U https://github.com/TimLisemer/ansible_desktop.git

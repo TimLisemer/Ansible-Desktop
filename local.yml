@@ -3,8 +3,56 @@
   connection: local
   become: true # sudo
 
+
   tasks:
-  - name: install htop
+  - name: install packages
     package: 
-      name: htop
-  
+      name: 
+        - flatpak
+        - nano
+        - htop
+        - curl
+        - wget
+    register: package_install_result
+
+
+  - name: Handle errors if package installation fails
+    fail:
+      msg: "Package installation failed"
+    when: package_install_result.failed
+
+  - name: Add Flathub remote
+      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+  - name: Install Flatpak applications
+      flatpak:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - ca.desrt.dconf-editor
+        - com.bitwarden.desktop
+        - com.github.flxzt.rnote
+        - com.github.tchx84.Flatseal
+        - com.github.wwmm.easyeffects
+        - com.mattjakeman.ExtensionManager
+        - com.spotify.Client
+        - io.github.Foldex.AdwSteamGtk
+        - io.github.dyegoaurelio.simple-wireplumber-gui
+        - io.github.java_decompiler.jd-gui
+        - org.gnome.Boxes
+        - org.gnome.Boxes.Extension.OsinfoDb
+        - org.gnome.Builder
+        - org.gnome.Geary
+        - org.gnome.gitlab.cheywood.Iotas
+        - org.gnome.seahorse.Application
+        - org.gtk.Gtk3theme.adw-gtk3
+        - org.gtk.Gtk3theme.adw-gtk3-dark	
+        - org.pipewire.Helvum
+        - re.sonny.Workbench
+
+  - name: copy Nextcloud - sync-exclude.lst
+    copy:
+      src:  files/sync-exclude.lst
+      dest: /home/tim/.sync-exclude.lst
+      owner: tim
+      group: tim
