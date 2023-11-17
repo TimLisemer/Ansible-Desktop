@@ -1,1 +1,1 @@
-sudo ansible-pull -U https://github.com/TimLisemer/ansible_desktop.git
+sudo ansible-pull -U https://github.com/TimLisemer/Ansible-Desktop.git
