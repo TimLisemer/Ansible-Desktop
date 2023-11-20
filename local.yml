@@ -8,13 +8,72 @@
   - name: install packages
     package: 
       name: 
+        - git
+        - base-devel
+        - networkmanager
+        - archlinux-appstream-data
         - flatpak
+        - packagekit-qt5
+        - packagekit-qt6
+        - qt5-base
+        - qt6-base
+        - qt5-tools
+        - qt6-tools
+        - libusb
+        - mbedtls
+        - mbedtls2
+        - fwupd
+        - a52dec
+        - faac
+        - faad2
+        - flac
+        - jasper
+        - lame
+        - libdca
+        - libdv
+        - libmad
+        - libmpeg2
+        - libtheora
+        - libvorbis
+        - libxv
+        - libva-utils
+        - utils vdpauinfo
+        - ffmpeg
+        - opus
+        - wavpack
+        - x264
+        - x265
+        - xvidcore
+        - adobe-source-han-sans-otc-fonts
+        - adobe-source-han-serif-otc-fonts
+        - noto-fonts noto-fonts-cjk noto-fonts-emoji
+        - ttf-liberation
+        - wqy-zenhei
+        - lib32-systemd
+        - nvidia
+        - nvidia-utils
+        - lib32-nvidia-utils
+        - nvidia-settings
+        - vulkan-icd-loader
+        - lib32-vulkan-icd-loader
+        - firefox
         - nano
         - htop
         - curl
         - wget
         - bluez
         - bluez-utils
+        - code
+        - rustup
+        - jdk-openjdk
+        - python
+        - python-pip
+        - gcc
+        - maven
+        - docker
+        - docker-compose
+        - fish
+        - nextcloud-client
     register: package_install_result
 
 
@@ -53,6 +112,7 @@
       - org.pipewire.Helvum
       - re.sonny.Workbench
       - io.gitlab.news_flash.NewsFlash
+      - org.openrgb.OpenRGB
 
   - name: copy Nextcloud - sync-exclude.lst
     copy:
