@@ -13,6 +13,8 @@
         - htop
         - curl
         - wget
+        - bluez
+        - blue-utils
     register: package_install_result
 
 
