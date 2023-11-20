@@ -14,7 +14,7 @@
         - curl
         - wget
         - bluez
-        - blue-utils
+        - bluez-utils
     register: package_install_result
 
 
