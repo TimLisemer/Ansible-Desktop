@@ -37,7 +37,7 @@
         - libvorbis
         - libxv
         - libva-utils
-        - utils vdpauinfo
+        - vdpauinfo
         - ffmpeg
         - opus
         - wavpack
