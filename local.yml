@@ -116,7 +116,7 @@
       - org.pipewire.Helvum
       - re.sonny.Workbench
       - io.gitlab.news_flash.NewsFlash
-      - org.openrgb.OpenRGB
+      - org.libreoffice.LibreOffice
 
   - name: copy Nextcloud - sync-exclude.lst
     become: false
