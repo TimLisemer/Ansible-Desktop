@@ -117,6 +117,7 @@
       - re.sonny.Workbench
       - io.gitlab.news_flash.NewsFlash
       - org.libreoffice.LibreOffice
+      - org.pulseaudio.pavucontrol
 
   - name: copy Nextcloud - sync-exclude.lst
     become: false
