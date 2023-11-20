@@ -127,11 +127,11 @@
       group: tim
 
   - name: create wireplumber config folder
-      file:
-        path: "~/.config/wireplumber/main.lua.d"
-        state: directory
-        owner: tim
-        group: tim
+    file:
+      path: "~/.config/wireplumber/main.lua.d"
+      state: directory
+      owner: tim
+      group: tim
 
   - name: copy wireplumber config
     become: false
@@ -140,3 +140,6 @@
       dest: ~/.config/wireplumber/main.lua.d/60-alsa-config.lua
       owner: tim
       group: tim
+
+  - name: Load dconf settings
+    shell: "curl -sSL https://raw.githubusercontent.com/TimLisemer/Ansible-Desktop/main/files/dconf.txt | dconf load /"
