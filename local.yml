@@ -148,5 +148,5 @@
     systemd:
       name: "{{ item }}"
       enabled: yes
-      loop:
-        - avahi-daemon
+    loop:
+      - avahi-daemon
