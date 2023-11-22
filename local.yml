@@ -121,7 +121,8 @@
       - re.sonny.Workbench
 
   - name: Load dconf settings
-    shell: "dconf load / < files/dconf.txt"
+    command: "dconf load / < files/dconf.txt"
+    become: yes
 
   - name: copy Nextcloud - sync-exclude.lst
     become: false
