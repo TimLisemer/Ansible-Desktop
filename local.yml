@@ -120,6 +120,9 @@
       - org.raspberrypi.rpi-imager
       - re.sonny.Workbench
 
+  - name: Load dconf settings
+    shell: "dconf load / < files/dconf.txt"
+
   - name: copy Nextcloud - sync-exclude.lst
     become: false
     copy:
