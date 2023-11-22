@@ -78,13 +78,9 @@
         - nextcloud-client
         - discord
         - steam
+        - ttf-jetbrains-mono
+        - neovim
     register: package_install_result
-
-
-  - name: Handle errors if package installation fails
-    fail:
-      msg: "Package installation failed"
-    when: package_install_result.failed
 
   - name: Add Flathub remote
     command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -98,6 +94,7 @@
       - ca.desrt.dconf-editor
       - com.bitwarden.desktop
       - com.github.flxzt.rnote
+      - com.github.liferooter.textpieces
       - com.github.tchx84.Flatseal
       - com.github.wwmm.easyeffects
       - com.mattjakeman.ExtensionManager
@@ -105,6 +102,10 @@
       - io.github.Foldex.AdwSteamGtk
       - io.github.dyegoaurelio.simple-wireplumber-gui
       - io.github.java_decompiler.jd-gui
+      - io.gitlab.news_flash.NewsFlash
+      - md.obsidian.Obsidian
+      - org.cvfosammmm.Setzer
+      - org.fedoraproject.MediaWriter
       - org.gnome.Boxes
       - org.gnome.Boxes.Extension.OsinfoDb
       - org.gnome.Builder
@@ -113,11 +114,11 @@
       - org.gnome.seahorse.Application
       - org.gtk.Gtk3theme.adw-gtk3
       - org.gtk.Gtk3theme.adw-gtk3-dark	
-      - org.pipewire.Helvum
-      - re.sonny.Workbench
-      - io.gitlab.news_flash.NewsFlash
       - org.libreoffice.LibreOffice
+      - org.pipewire.Helvum
       - org.pulseaudio.pavucontrol
+      - org.raspberrypi.rpi-imager
+      - re.sonny.Workbench
 
   - name: copy Nextcloud - sync-exclude.lst
     become: false
@@ -129,7 +130,7 @@
 
   - name: create wireplumber config folder
     file:
-      path: "~/.config/wireplumber/main.lua.d"
+      path: "/home/tim/.config/wireplumber/main.lua.d"
       state: directory
       owner: tim
       group: tim
@@ -138,6 +139,7 @@
     become: false
     copy:
       src:  files/60-alsa-config.lua
-      dest: ~/.config/wireplumber/main.lua.d/60-alsa-config.lua
+      dest: /home/tim/.config/wireplumber/main.lua.d/60-alsa-config.lua
       owner: tim
       group: tim
+
