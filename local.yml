@@ -143,3 +143,10 @@
       owner: tim
       group: tim
 
+
+  - name: Enable systemd services
+    systemd:
+      name: "{{ item }}"
+      enabled: yes
+      loop:
+        - avahi-daemon
