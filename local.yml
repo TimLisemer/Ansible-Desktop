@@ -100,9 +100,10 @@
       - com.github.wwmm.easyeffects
       - com.mattjakeman.ExtensionManager
       - com.spotify.Client
-      - io.github.Foldex.AdwSteamGtk
       - io.github.dyegoaurelio.simple-wireplumber-gui
+      - io.github.Foldex.AdwSteamGtk
       - io.github.java_decompiler.jd-gui
+      - io.github.mimbrero.WhatsAppDesktop
       - io.gitlab.news_flash.NewsFlash
       - md.obsidian.Obsidian
       - org.cvfosammmm.Setzer
