@@ -19,6 +19,8 @@
         - qt6-base
         - qt5-tools
         - qt6-tools
+        - qt5-wayland
+        - qt6-wayland
         - libusb
         - mbedtls
         - mbedtls2
@@ -117,7 +119,6 @@
       - org.gtk.Gtk3theme.adw-gtk3
       - org.gtk.Gtk3theme.adw-gtk3-dark	
       - org.libreoffice.LibreOffice
-      - org.openrgb.OpenRGB
       - org.pipewire.Helvum
       - org.pulseaudio.pavucontrol
       - org.raspberrypi.rpi-imager
