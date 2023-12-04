@@ -95,6 +95,7 @@
         - ruby
         - rubygems
         - tree-sitter
+        - tree-sitter-cli
         - python-pynvim
         - xclip
         - wl-clipboard
