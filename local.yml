@@ -82,6 +82,7 @@
         - steam
         - ttf-jetbrains-mono
         - neovim
+        - gvim
         - pacman-contrib
     register: package_install_result
 
