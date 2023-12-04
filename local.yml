@@ -84,6 +84,7 @@
         - neovim
         - gvim
         - pacman-contrib
+        - ripgrep
     register: package_install_result
 
   - name: Add Flathub remote
