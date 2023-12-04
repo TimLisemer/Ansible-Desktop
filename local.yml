@@ -99,6 +99,7 @@
         - python-pynvim
         - xclip
         - wl-clipboard
+        - fd
     register: package_install_result
 
   - name: Add Flathub remote
