@@ -85,6 +85,19 @@
         - gvim
         - pacman-contrib
         - ripgrep
+        - lua
+        - luarocks
+        - php
+        - perl
+        - composer
+        - nodejs
+        - npm
+        - ruby
+        - rubygems
+        - tree-sitter
+        - python-pynvim
+        - xclip
+        - wl-clipboard
     register: package_install_result
 
   - name: Add Flathub remote
@@ -125,19 +138,6 @@
       - org.pulseaudio.pavucontrol
       - org.raspberrypi.rpi-imager
       - re.sonny.Workbench
-      - lua
-      - luarocks
-      - php
-      - perl
-      - composer
-      - nodejs
-      - npm
-      - ruby
-      - rubygems
-      - tree-sitter
-      - python-pynvim
-      - xclip
-      - wl-clipboard
   - name: copy Nextcloud - sync-exclude.lst
     become: false
     copy:
