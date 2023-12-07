@@ -100,6 +100,7 @@
         - xclip
         - wl-clipboard
         - fd
+        - neofetch
     register: package_install_result
 
   - name: Add Flathub remote
