@@ -22,9 +22,10 @@
 # Cache/Tmp Files
 cache/*
 tmp/*
-# Big Files
+# Big Files / Programs
 *.vdi
 .docker
+.local/share/JetBrains/Toolbox
 
 ###############################################
 # directories, probably not worth a backup    #
