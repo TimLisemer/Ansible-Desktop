@@ -26,6 +26,7 @@ tmp/*
 *.vdi
 .docker
 .local/share/containers/storage/*
+.local/share/gnome-builder/flatpak/*
 .local/share/JetBrains/Toolbox
 
 ###############################################
