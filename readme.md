@@ -1,8 +1,15 @@
-sudo ansible-pull -U https://github.com/TimLisemer/Ansible-Desktop.git
+### First time setup ssh:
 
-curl -sSL https://raw.githubusercontent.com/TimLisemer/Ansible-Desktop/main/files/dconf.txt | dconf load /
+`scp -r root@tim-server:/mnt/user/Tim-Server/Backups/Linux/rsync/.ssh /home/tim/`
+`chmod +x /home/tim/.ssh/setup.sh`
+`./home/tim/.ssh/setup.ssh`
 
+### Local Run:
 
-Todo:
+`sudo ansible-pull -U https://github.com/TimLisemer/Ansible-Desktop.git`
+`curl -sSL https://raw.githubusercontent.com/TimLisemer/Ansible-Desktop/main/files/dconf.txt | dconf load /`
+
+### Todo:
+
 Add yay
-Add npm -->  npm install -g neovim
+Add npm --> npm install -g neovim
