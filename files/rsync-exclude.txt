@@ -19,9 +19,12 @@
 /Games/Storage/*
 .local/share/Steam/steamapps/common/*
 .local/share/Steam/appcache/*
+# Cache/Tmp Files
 cache/*
 tmp/*
+# Big Files
 *.vdi
+.docker
 
 ###############################################
 # directories, probably not worth a backup    #
