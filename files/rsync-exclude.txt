@@ -21,6 +21,7 @@
 .local/share/Steam/appcache/*
 cache/*
 tmp/*
+*.vdi
 
 ###############################################
 # directories, probably not worth a backup    #
