@@ -17,7 +17,7 @@
 
 # Games
 /Games/Storage/*
-.local/share/Steam/steamapps/common/*
+.local/share/Steam/steamapps/*
 .local/share/Steam/appcache/*
 # Cache/Tmp Files
 cache/*
