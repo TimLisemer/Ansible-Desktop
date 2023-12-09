@@ -29,6 +29,7 @@ tmp/*
 .local/share/gnome-builder/flatpak/*
 .var/app/org.gnome.Boxes/data/*
 .local/share/JetBrains/Toolbox
+venv/
 
 ###############################################
 # directories, probably not worth a backup    #
