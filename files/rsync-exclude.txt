@@ -25,6 +25,7 @@ tmp/*
 # Big Files / Programs
 *.vdi
 .docker
+.local/share/containers/storage/*
 .local/share/JetBrains/Toolbox
 
 ###############################################
