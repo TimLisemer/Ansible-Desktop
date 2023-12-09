@@ -17,6 +17,7 @@
 
 # Games
 /Games/Storage/*
+.local/share/Steam/steamapps/common/*
 
 ###############################################
 # directories, probably not worth a backup    #
