@@ -3,172 +3,180 @@
   connection: local
   become: true # sudo
 
-
   tasks:
-  - name: install packages
-    package: 
-      name: 
-        - git
-        - base-devel
-        - networkmanager
-        - archlinux-appstream-data
-        - flatpak
-        - packagekit-qt5
-        - packagekit-qt6
-        - qt5-base
-        - qt6-base
-        - qt5-tools
-        - qt6-tools
-        - qt5-wayland
-        - qt6-wayland
-        - libusb
-        - mbedtls
-        - mbedtls2
-        - fwupd
-        - a52dec
-        - faac
-        - faad2
-        - flac
-        - jasper
-        - lame
-        - libdca
-        - libdv
-        - libmad
-        - libmpeg2
-        - libtheora
-        - libvorbis
-        - libxv
-        - libva-utils
-        - vdpauinfo
-        - ffmpeg
-        - opus
-        - wavpack
-        - x264
-        - x265
-        - xvidcore
-        - adobe-source-han-sans-otc-fonts
-        - adobe-source-han-serif-otc-fonts
-        - noto-fonts
-        - noto-fonts-cjk
-        - noto-fonts-emoji
-        - ttf-liberation
-        - wqy-zenhei
-        - lib32-systemd
-        - nvidia
-        - nvidia-utils
-        - lib32-nvidia-utils
-        - nvidia-settings
-        - vulkan-icd-loader
-        - lib32-vulkan-icd-loader
-        - firefox
-        - nano
-        - htop
-        - curl
-        - wget
-        - bluez
-        - bluez-utils
-        - code
-        - rustup
-        - jdk-openjdk
-        - python
-        - python-pip
-        - gcc
-        - maven
-        - docker
-        - docker-compose
-        - fish
-        - nextcloud-client
-        - discord
-        - steam
-        - ttf-jetbrains-mono
-        - neovim
-        - gvim
-        - pacman-contrib
-        - ripgrep
-        - lua
-        - luarocks
-        - php
-        - perl
-        - composer
-        - nodejs
-        - npm
-        - ruby
-        - rubygems
-        - tree-sitter
-        - tree-sitter-cli
-        - python-pynvim
-        - xclip
-        - wl-clipboard
-        - fd
-        - neofetch
-    register: package_install_result
+    - name: install packages
+      package:
+        name:
+          - git
+          - base-devel
+          - networkmanager
+          - archlinux-appstream-data
+          - flatpak
+          - packagekit-qt5
+          - packagekit-qt6
+          - qt5-base
+          - qt6-base
+          - qt5-tools
+          - qt6-tools
+          - qt5-wayland
+          - qt6-wayland
+          - libusb
+          - mbedtls
+          - mbedtls2
+          - fwupd
+          - a52dec
+          - faac
+          - faad2
+          - flac
+          - jasper
+          - lame
+          - libdca
+          - libdv
+          - libmad
+          - libmpeg2
+          - libtheora
+          - libvorbis
+          - libxv
+          - libva-utils
+          - vdpauinfo
+          - ffmpeg
+          - opus
+          - wavpack
+          - x264
+          - x265
+          - xvidcore
+          - adobe-source-han-sans-otc-fonts
+          - adobe-source-han-serif-otc-fonts
+          - noto-fonts
+          - noto-fonts-cjk
+          - noto-fonts-emoji
+          - ttf-liberation
+          - wqy-zenhei
+          - lib32-systemd
+          - nvidia
+          - nvidia-utils
+          - lib32-nvidia-utils
+          - nvidia-settings
+          - vulkan-icd-loader
+          - lib32-vulkan-icd-loader
+          - firefox
+          - nano
+          - htop
+          - curl
+          - wget
+          - bluez
+          - bluez-utils
+          - code
+          - rustup
+          - jdk-openjdk
+          - python
+          - python-pip
+          - gcc
+          - maven
+          - docker
+          - docker-compose
+          - fish
+          - nextcloud-client
+          - discord
+          - steam
+          - ttf-jetbrains-mono
+          - neovim
+          - gvim
+          - pacman-contrib
+          - ripgrep
+          - lua
+          - luarocks
+          - php
+          - perl
+          - composer
+          - nodejs
+          - npm
+          - ruby
+          - rubygems
+          - tree-sitter
+          - tree-sitter-cli
+          - python-pynvim
+          - xclip
+          - wl-clipboard
+          - fd
+          - neofetch
+          - rsync
+      register: package_install_result
 
-  - name: Add Flathub remote
-    command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    - name: Add Flathub remote
+      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-  - name: Install Flatpak applications
-    flatpak:
-      name: "{{ item }}"
-      state: present
-      remote: flathub
-    loop:
-      - ca.desrt.dconf-editor
-      - com.bitwarden.desktop
-      - com.github.flxzt.rnote
-      - com.github.johnfactotum.Foliate
-      - com.github.liferooter.textpieces
-      - com.github.tchx84.Flatseal
-      - com.github.wwmm.easyeffects
-      - com.mattjakeman.ExtensionManager
-      - com.spotify.Client
-      - io.github.dyegoaurelio.simple-wireplumber-gui
-      - io.github.Foldex.AdwSteamGtk
-      - io.github.java_decompiler.jd-gui
-      - io.github.mimbrero.WhatsAppDesktop
-      - io.gitlab.news_flash.NewsFlash
-      - md.obsidian.Obsidian
-      - org.cvfosammmm.Setzer
-      - org.fedoraproject.MediaWriter
-      - org.gnome.Boxes
-      - org.gnome.Boxes.Extension.OsinfoDb
-      - org.gnome.Builder
-      - org.gnome.Geary
-      - org.gnome.gitlab.cheywood.Iotas
-      - org.gnome.seahorse.Application
-      - org.gtk.Gtk3theme.adw-gtk3
-      - org.gtk.Gtk3theme.adw-gtk3-dark	
-      - org.libreoffice.LibreOffice
-      - org.pipewire.Helvum
-      - org.pulseaudio.pavucontrol
-      - org.raspberrypi.rpi-imager
-      - re.sonny.Workbench
-  - name: copy Nextcloud - sync-exclude.lst
-    become: false
-    copy:
-      src:  files/sync-exclude.lst
-      dest: /home/tim/.sync-exclude.lst
-      owner: tim
-      group: tim
+    - name: Install Flatpak applications
+      flatpak:
+        name: "{{ item }}"
+        state: present
+        remote: flathub
+      loop:
+        - ca.desrt.dconf-editor
+        - com.bitwarden.desktop
+        - com.github.flxzt.rnote
+        - com.github.johnfactotum.Foliate
+        - com.github.liferooter.textpieces
+        - com.github.tchx84.Flatseal
+        - com.github.wwmm.easyeffects
+        - com.mattjakeman.ExtensionManager
+        - com.spotify.Client
+        - io.github.dyegoaurelio.simple-wireplumber-gui
+        - io.github.Foldex.AdwSteamGtk
+        - io.github.java_decompiler.jd-gui
+        - io.github.mimbrero.WhatsAppDesktop
+        - io.gitlab.news_flash.NewsFlash
+        - md.obsidian.Obsidian
+        - org.cvfosammmm.Setzer
+        - org.fedoraproject.MediaWriter
+        - org.gnome.Boxes
+        - org.gnome.Boxes.Extension.OsinfoDb
+        - org.gnome.Builder
+        - org.gnome.Geary
+        - org.gnome.gitlab.cheywood.Iotas
+        - org.gnome.seahorse.Application
+        - org.gtk.Gtk3theme.adw-gtk3
+        - org.gtk.Gtk3theme.adw-gtk3-dark
+        - org.libreoffice.LibreOffice
+        - org.pipewire.Helvum
+        - org.pulseaudio.pavucontrol
+        - org.raspberrypi.rpi-imager
+        - re.sonny.Workbench
 
-  - name: create wireplumber config folder
-    file:
-      path: "/home/tim/.config/wireplumber/main.lua.d"
-      state: directory
-      owner: tim
-      group: tim
+    - name: copy Nextcloud - sync-exclude.lst
+      become: false
+      copy:
+        src: files/sync-exclude.lst
+        dest: /home/tim/.sync-exclude.lst
+        owner: tim
+        group: tim
 
-  - name: copy wireplumber config
-    become: false
-    copy:
-      src:  files/60-alsa-config.lua
-      dest: /home/tim/.config/wireplumber/main.lua.d/60-alsa-config.lua
-      owner: tim
-      group: tim
+    - name: copy Rsync - rsync-exclude.txt
+      become: false
+      copy:
+        src: files/rsync-exclude.txt
+        dest: /home/tim/.rsync-exclude.txt
+        owner: tim
+        group: tim
 
+    - name: create wireplumber config folder
+      file:
+        path: "/home/tim/.config/wireplumber/main.lua.d"
+        state: directory
+        owner: tim
+        group: tim
 
-  - name: Enable systemd services
-    systemd:
-      name: "{{ item }}"
-      enabled: yes
-    loop:
-      - avahi-daemon
+    - name: copy wireplumber config
+      become: false
+      copy:
+        src: files/60-alsa-config.lua
+        dest: /home/tim/.config/wireplumber/main.lua.d/60-alsa-config.lua
+        owner: tim
+        group: tim
+
+    - name: Enable systemd services
+      systemd:
+        name: "{{ item }}"
+        enabled: yes
+      loop:
+        - avahi-daemon
