@@ -30,6 +30,7 @@ tmp/*
 .var/app/org.gnome.Boxes/data/*
 .local/share/JetBrains/Toolbox
 venv/
+/Music/*
 
 ###############################################
 # directories, probably not worth a backup    #
