@@ -29,7 +29,9 @@ tmp/*
 .local/share/gnome-builder/flatpak/*
 .var/app/org.gnome.Boxes/data/*
 .local/share/JetBrains/Toolbox
+# Time Consuming Files
 venv/
+# Unwanted Files
 /Music/*
 
 ###############################################
