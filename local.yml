@@ -181,8 +181,8 @@
       loop:
         - avahi-daemon
 
-    - name: Perform rsync backup to remote server
-      ansible.builtin.command: >
-        rsync -aP --exclude-from=/home/tim/.rsync-exclude.txt
-        /home/tim/
-        root@tim-server:/mnt/user0/Tim-Server/Backups/Linux/rsync/
+    #- name: Perform rsync backup to remote server
+    #  ansible.builtin.command: >
+    #    rsync -aP --exclude-from=/home/tim/.rsync-exclude.txt
+    #    /home/tim/
+    #    root@tim-server:/mnt/user0/Tim-Server/Backups/Linux/rsync/
