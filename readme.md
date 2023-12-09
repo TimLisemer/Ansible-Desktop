@@ -13,6 +13,12 @@ sudo ansible-pull -U https://github.com/TimLisemer/Ansible-Desktop.git
 curl -sSL https://raw.githubusercontent.com/TimLisemer/Ansible-Desktop/main/files/dconf.txt | dconf load /
 ```
 
+### Manually RSync
+
+```
+rsync -aP --exclude-from=/home/tim/.rsync-exclude.txt /home/tim/ root@tim-server:/mnt/user0/Tim-Server/Backups/Linux/rsync/
+```
+
 ### Todo:
 
 Add yay
