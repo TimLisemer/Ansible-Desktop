@@ -21,6 +21,7 @@
 .local/share/Steam/appcache/*
 # Cache/Tmp Files
 cache/*
+Cache/*
 tmp/*
 # Big Files / Programs
 *.vdi
