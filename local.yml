@@ -101,6 +101,8 @@
           - fd
           - neofetch
           - rsync
+          - man-db
+          - man-pages
       register: package_install_result
 
     - name: Add Flathub remote
