@@ -13,17 +13,11 @@ sudo ansible-pull -U https://github.com/TimLisemer/Ansible-Desktop.git
 curl -sSL https://raw.githubusercontent.com/TimLisemer/Ansible-Desktop/main/files/dconf.txt | dconf load /
 ```
 
-### Manually RSync
-
-```
-rsync -aP --exclude-from=/home/tim/.rsync-exclude.txt /home/tim/ root@tim-server:/mnt/user0/Tim-Server/Backups/Linux/rsync/
-```
-
-```
-rsync -aP --delete --exclude-from=/home/tim/.rsync-exclude.txt /home/tim/ root@tim-server:/mnt/user0/Tim-Server/Backups/Linux/rsync/; rsync -aP --delete --exclude-from=/home/tim/.rsync-exclude.txt root@tim-server:/mnt/user0/Tim-Server/Backups/Linux/rsync/ /home/tim/
-```
-
 ### Todo:
 
 Add yay
 Add npm --> npm install -g neovim
+```
+systemctl --user daemon-reload
+systemctl --user enable --now home_sync.timer --now
+```
