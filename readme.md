@@ -16,6 +16,7 @@ curl -sSL https://raw.githubusercontent.com/TimLisemer/Ansible-Desktop/main/file
 ### Todo:
 
 Add yay
+
 Add npm --> npm install -g neovim
 ```
 systemctl --user daemon-reload
