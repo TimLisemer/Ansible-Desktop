@@ -8,6 +8,7 @@
       package:
         name:
           - git
+          - git-lfs
           - base-devel
           - networkmanager
           - archlinux-appstream-data
