@@ -10,6 +10,8 @@ tmp/*
 .local/share/gnome-builder/flatpak/*
 .var/app/org.gnome.Boxes/data/*
 /Music/*
+.local/share/fish/*_history
+.local/share/fish/9999_history
 
 ################################################
 # These directories may definitely be excluded #
@@ -123,63 +125,6 @@ Thumbs.db
 #Tor Browser supposed to not be backupped ;)
 .local/share/torbrowser
 
-#Firefox-specific (see also Profile folder):
-
-.mozilla/firefox/*/Cache
-# in case Fx crashes dumps will be stored in this
-.mozilla/firefox/*/minidumps
-# session-specific 
-.mozilla/firefox/*/.parentlock
-# phishing database, recreated
-.mozilla/firefox/*/urlclassifier3.sqlite
-# blacklisted extensions
-.mozilla/firefox/*/blocklist.xml
-# extension database, recreated on startup
-.mozilla/firefox/*/extensions.sqlite
-.mozilla/firefox/*/extensions.sqlite-journal
-.mozilla/firefox/*/extensions.rdf
-.mozilla/firefox/*/extensions.ini
-.mozilla/firefox/*/extensions.cache
-# cached UI data, recreated
-.mozilla/firefox/*/XUL.mfasl
-.mozilla/firefox/*/XPC.mfasl
-.mozilla/firefox/*/xpti.dat
-.mozilla/firefox/*/compreg.dat
-# cached plugin data, recreated
-.mozilla/firefox/*/pluginreg.dat
-
-#SeaMonkey-specific (see also Profile folder):
-
-.mozilla/seamonkey/*/Cache
-# in case Fx crashes dumps will be stored in this
-.mozilla/seamonkey/*/minidumps
-# session-specific 
-.mozilla/seamonkey/*/.parentlock
-# blacklisted extensions
-.mozilla/seamonkey/*/blocklist.xml
-# extension database, recreated on startup
-.mozilla/seamonkey/*/extensions.sqlite
-.mozilla/seamonkey/*/extensions.rdf
-.mozilla/seamonkey/*/extensions.ini
-# cached UI data, recreated
-.mozilla/seamonkey/*/xpti.dat
-.mozilla/seamonkey/*/compreg.dat
-# cached plugin data, recreated
-.mozilla/seamonkey/*/pluginreg.dat
-
-# Thunderbird Cache in your profile folder
-.thunderbird/*/Cache
-
-#Opera-specific (related question on Superuser.com: Is documentation available on files and directories in the Opera profile folder?):
-
-.opera/temporary_downloads
-.opera/cache
-.opera/thumbnails
-.opera/opcache
-.opera/icons
-.opera/application_cache
-.opera/widgets/*/cache
-.opera/lock
 
 # Keychain dir (manage SSH and GPG keys, front-end to ssh-agent and ssh-add)
 /.keychain
@@ -224,36 +169,8 @@ Thumbs.db
 .googleearth/Temp
 .googleearth/Cache
 
-#Google Chrome:
-
-.config/google-chrome/ShaderCache
-.config/google-chrome/*/Local Storage
-.config/google-chrome/*/Session Storage
-.config/google-chrome/*/Application Cache
-.config/google-chrome/*/History Index *
-.config/google-chrome/*/Service Worker/CacheStorage
-
-#Chromium:
-
-.config/chromium/*/Local Storage
-.config/chromium/*/Session Storage
-.config/chromium/*/Service Worker/CacheStorage
-.config/chromium/*/Application Cache
-.config/chromium/*/History Index *
-/snap/chromium/common/.cache
-/snap/chromium/*/.config/chromium/*/Service Worker/CacheStorage
-/snap/chromium/*/.local/share/
-
 #Riot
 /snap/riot-web/
-
-#Brave
-.config/BraveSoftware/Brave-Browser/*/Feature Engagement Tracker/
-.config/BraveSoftware/Brave-Browser/*/Local Storage/
-.config/BraveSoftware/Brave-Browser/*/Service Worker/CacheStorage/
-.config/BraveSoftware/Brave-Browser/*/Session Storage/
-.config/BraveSoftware/Brave-Browser/Safe Browsing/
-.config/BraveSoftware/Brave-Browser/ShaderCache/
 
 #Local repositories:
 .gradle/caches
@@ -296,15 +213,6 @@ nohup.out
 .vim/bundle/*
 .viminfo
 
-# VS Code
-.vscode-oss/extensions/*
-.vscode/extensions/*
-.config/Code - OSS/logs/
-.config/Code/logs/
-.config/Code/CachedData/*
-
-# VS Codium
-.config/VSCodium/CachedExtensionVSIXs
 
 # VirtualBox
 .config/VirtualBox/VBoxSVC.log*
