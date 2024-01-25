@@ -54,7 +54,7 @@
           - ttf-liberation
           - wqy-zenhei
           - lib32-systemd
-          - nvidia
+          - nvidia-open-dkms
           - nvidia-utils
           - lib32-nvidia-utils
           - nvidia-settings
