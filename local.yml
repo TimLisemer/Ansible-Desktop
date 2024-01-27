@@ -122,6 +122,7 @@
         - com.github.liferooter.textpieces
         - com.github.tchx84.Flatseal
         - com.github.wwmm.easyeffects
+        - com.heroicgameslauncher.hgl
         - com.mattjakeman.ExtensionManager
         - com.spotify.Client
         - io.github.dyegoaurelio.simple-wireplumber-gui
@@ -130,6 +131,7 @@
         - io.github.mimbrero.WhatsAppDesktop
         - io.gitlab.news_flash.NewsFlash
         - md.obsidian.Obsidian
+        - net.lutris.Lutris
         - org.cvfosammmm.Setzer
         - org.fedoraproject.MediaWriter
         - org.gnome.Boxes
