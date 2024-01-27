@@ -77,7 +77,6 @@
           - docker
           - docker-compose
           - fish
-          - nextcloud-client
           - discord
           - steam
           - ttf-jetbrains-mono
