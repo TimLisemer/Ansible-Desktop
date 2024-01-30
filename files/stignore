@@ -27,6 +27,9 @@
 !/.local/share/ParadoxInteractive/
 !/.local/share/aspyr-media/
 !/.local/share/gnome-shell/
+!/.minecraft/mods/
+!/.minecraft/saves/
+!/.minecraft/shaderpacks/
 !/.mysterium/
 !/.npm/
 !/.paradoxlauncher/
