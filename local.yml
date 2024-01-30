@@ -185,4 +185,4 @@
         enabled: yes
       loop:
         - avahi-daemon
-        - syncthing
+        - syncthing@tim
