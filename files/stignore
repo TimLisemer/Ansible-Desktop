@@ -1,4 +1,5 @@
 /.config/discord/
+!/.local/share/gnome-shell/notifications
 
 !/Bookmarks\ Backups/
 !/Coding/
