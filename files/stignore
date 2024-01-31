@@ -46,6 +46,8 @@
 !/.bash_logout
 !/.bashrc
 !/.gitconfig
+!/.minecraft/servers.dat
+!/.minecraft/servers.dat_old
 !/.pulse-cookie
 !/.python_history
 !/.steampath
