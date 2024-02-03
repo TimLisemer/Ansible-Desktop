@@ -18,3 +18,4 @@ sudo reboot
 Add yay
 
 Add npm --> npm install -g neovim
+npm install -g sass
