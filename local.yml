@@ -103,6 +103,21 @@
           - rsync
           - man-db
           - man-pages
+          - vlc
+          - hyprland
+          - kitty
+          - xdg-desktop-portal-hyprland
+          - nwg-look
+          - waybar
+          - polkit-gnome
+          - wofi
+          - otf-font-awesome 
+          - pamixer
+          - playerctl
+          - cliphist
+          - qt6ct
+          - nwg-look
+          
       register: package_install_result
 
     - name: Add Flathub remote
