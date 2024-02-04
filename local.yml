@@ -103,7 +103,6 @@
           - rsync
           - man-db
           - man-pages
-          - vlc
           - hyprland
           - kitty
           - xdg-desktop-portal-hyprland
@@ -160,6 +159,7 @@
         - org.pipewire.Helvum
         - org.pulseaudio.pavucontrol
         - org.raspberrypi.rpi-imager
+        - org.videolan.VLC
         - re.sonny.Workbench
 
     - name: copy Nextcloud - sync-exclude.lst
