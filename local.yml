@@ -199,4 +199,5 @@
         enabled: yes
       loop:
         - avahi-daemon
+        - bluetooth
         - syncthing@tim
