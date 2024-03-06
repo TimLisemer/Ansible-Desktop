@@ -202,4 +202,5 @@
       loop:
         - avahi-daemon
         - bluetooth
+        - docker
         - syncthing@tim
