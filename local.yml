@@ -130,6 +130,7 @@
       loop:
         - ca.desrt.dconf-editor
         - com.bitwarden.desktop
+        - com.getpostman.Postman
         - com.github.flxzt.rnote
         - com.github.johnfactotum.Foliate
         - com.github.liferooter.textpieces
