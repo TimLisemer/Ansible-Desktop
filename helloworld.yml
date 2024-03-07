@@ -1,6 +1,8 @@
 ---
 - name: Hello World Playbook
   hosts: all
+  gather_facts: yes
+  ignore_unreachable: true
 
   tasks:
     - name: Print Hello World

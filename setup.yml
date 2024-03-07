@@ -1,6 +1,8 @@
 ---
 - name: Aur App Installation Playbook
   hosts: all
+  gather_facts: yes
+  ignore_unreachable: true
 
   tasks:
     - name: copy Nextcloud - sync-exclude.lst
