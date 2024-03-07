@@ -141,7 +141,7 @@
         mode: 0644
         validate: 'visudo -cf %s'
 
-    - name: Install yay using makepkg if it isn't installed already
+    - name: Install yay using makepkg if it is not installed already
       aur:
         name: yay
         use: makepkg
