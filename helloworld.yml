@@ -1,6 +1,6 @@
 ---
 - name: Hello World Playbook
-  hosts: localhost  # Change to your target host or group
+  hosts: Ansible
 
   tasks:
     - name: Print Hello World

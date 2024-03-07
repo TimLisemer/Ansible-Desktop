@@ -1,0 +1,45 @@
+---
+- name: Aur App Installation Playbook
+  hosts: Ansible
+
+  tasks:
+    - name: copy Nextcloud - sync-exclude.lst
+      become: false
+      copy:
+        src: files/sync-exclude.lst
+        dest: /home/tim/.sync-exclude.lst
+        owner: tim
+        group: tim
+
+    - name: copy Syncthing - stignore
+      become: false
+      copy:
+        src: files/stignore
+        dest: /home/tim/.stignore
+        owner: tim
+        group: tim
+
+    - name: create wireplumber config folder
+      file:
+        path: /home/tim/.config/wireplumber/main.lua.d
+        state: directory
+        owner: tim
+        group: tim
+
+    - name: copy wireplumber config
+      become: false
+      copy:
+        src: files/60-alsa-config.lua
+        dest: /home/tim/.config/wireplumber/main.lua.d/60-alsa-config.lua
+        owner: tim
+        group: tim
+
+    - name: Enable systemd services
+      systemd:
+        name: '{{ item }}'
+        enabled: 'yes'
+      loop:
+        - avahi-daemon
+        - bluetooth
+        - docker
+        - syncthing@tim

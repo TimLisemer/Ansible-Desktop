@@ -1,0 +1,42 @@
+---
+- name: Flatpak App Installation Playbook
+  hosts: Ansible
+
+  tasks:
+    - name: Remove multiple packages
+      community.general.flatpak:
+        name:
+          - ca.desrt.dconf-editor
+          - com.bitwarden.desktop
+          - com.getpostman.Postman
+          - com.github.johnfactotum.Foliate
+          - com.github.liferooter.textpieces
+          - com.github.tchx84.Flatseal
+          - com.github.wwmm.easyeffects
+          - com.heroicgameslauncher.hgl
+          - com.mattjakeman.ExtensionManager
+          - com.spotify.Client
+          - io.github.dyegoaurelio.simple-wireplumber-gui
+          - io.github.Foldex.AdwSteamGtk
+          - io.github.java_decompiler.jd-gui
+          - io.github.mimbrero.WhatsAppDesktop
+          - io.gitlab.news_flash.NewsFlash
+          - md.obsidian.Obsidian
+          - net.lutris.Lutris
+          - org.cvfosammmm.Setzer
+          - org.fedoraproject.MediaWriter
+          - org.gnome.Boxes
+          - org.gnome.Boxes.Extension.OsinfoDb
+          - org.gnome.Builder
+          - org.gnome.Geary
+          - org.gnome.gitlab.cheywood.Iotas
+          - org.gnome.seahorse.Application
+          - org.gtk.Gtk3theme.adw-gtk3
+          - org.gtk.Gtk3theme.adw-gtk3-dark
+          - org.libreoffice.LibreOffice
+          - org.pipewire.Helvum
+          - org.pulseaudio.pavucontrol
+          - org.raspberrypi.rpi-imager
+          - org.videolan.VLC
+          - re.sonny.Workbench
+        state: absent

@@ -1,0 +1,30 @@
+---
+- name: Aur App Installation Playbook
+  hosts: Ansible
+
+  tasks:
+    - name: 'Upgrade the system using yay, only act on AUR packages.'
+      kewlfft.aur.aur:
+        upgrade: 'yes'
+        use: yay
+
+    - name: Install aur packages using yay
+      kewlfft.aur.aur:
+        use: yay
+        name:
+          - adw-gtk3-git
+          - aic94xx-firmware
+          - ast-firmware
+          - clion
+          - gnome-terminal-transparency
+          - jetbrains-toolbox
+          - minecraft-launcher
+          - mkinitcpio-firmware
+          - proton-vpn-gtk-app
+          - python-openrgb
+          - rider
+          - rustrover
+          - upd72020x-fw
+          - visual-studio-code-bin
+          - wd719x-firmware
+          - webcord
