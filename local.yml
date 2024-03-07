@@ -122,8 +122,8 @@
       register: package_install_result
 
     - name: Install AUR helper collection
-        ansible.builtin.shell:
-          cmd: ansible-galaxy collection install kewlfft.aur
+      ansible.builtin.shell:
+        cmd: ansible-galaxy collection install kewlfft.aur
 
     - name: Create the `aur_builder` user
       become: yes
