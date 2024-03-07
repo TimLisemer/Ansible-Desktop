@@ -1,8 +1,8 @@
 - hosts: localhost
   connection: local
-  become: true
   tasks:
     - name: install packages
+      become: true
       package:
         name:
           - adobe-source-han-sans-otc-fonts
@@ -120,22 +120,23 @@
       register: package_install_result
 
     - name: Install AUR helper collection
+      become: true
       command: >-
         ansible-galaxy collection install kewlfft.aur
 
     - name: Create the `aur_builder` user
-      become: 'yes'
+      become: true
       ansible.builtin.user:
         name: aur_builder
-        create_home: 'yes'
+        create_home: false
         group: wheel
 
     - name: Allow the `aur_builder` user to run `sudo pacman` without a password
-      become: 'yes'
+      become: true
       ansible.builtin.lineinfile:
         path: /etc/sudoers.d/11-install-aur_builder
         line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
-        create: 'yes'
+        create: true
         mode: 420
         validate: visudo -cf %s
 
