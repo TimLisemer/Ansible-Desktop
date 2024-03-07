@@ -120,8 +120,8 @@
       register: package_install_result
 
     - name: Install AUR helper collection
-      ansible.builtin.shell:
-        cmd: ansible-galaxy collection install kewlfft.aur
+      command: >-
+        ansible-galaxy collection install kewlfft.aur
 
     - name: Create the `aur_builder` user
       become: 'yes'
@@ -138,6 +138,40 @@
         create: 'yes'
         mode: 420
         validate: visudo -cf %s
+
+    - name: Install yay using makepkg if it is not installed already
+      kewlfft.aur.aur:
+        name: yay
+        use: makepkg
+        state: present
+      become: 'yes'
+      become_user: aur_builder
+
+    - name: 'Upgrade the system using yay, only act on AUR packages.'
+      kewlfft.aur.aur:
+        upgrade: 'yes'
+        use: yay
+
+    - name: Install aur packages using yay
+      kewlfft.aur.aur:
+        use: yay
+        name:
+          - adw-gtk3-git
+          - aic94xx-firmware
+          - ast-firmware
+          - clion
+          - gnome-terminal-transparency
+          - jetbrains-toolbox
+          - minecraft-launcher
+          - mkinitcpio-firmware
+          - proton-vpn-gtk-app
+          - python-openrgb
+          - rider
+          - rustrover
+          - upd72020x-fw
+          - visual-studio-code-bin
+          - wd719x-firmware
+          - webcord
 
     - name: Add Flathub remote
       command: >-
