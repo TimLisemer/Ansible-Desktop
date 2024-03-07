@@ -44,4 +44,5 @@
         - avahi-daemon
         - bluetooth
         - docker
+        - sshd
         - syncthing@tim

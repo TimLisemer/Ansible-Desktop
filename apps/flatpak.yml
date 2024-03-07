@@ -28,7 +28,6 @@
           - org.cvfosammmm.Setzer
           - org.fedoraproject.MediaWriter
           - org.gnome.Boxes
-          - org.gnome.Boxes.Extension.OsinfoDb
           - org.gnome.Builder
           - org.gnome.Geary
           - org.gnome.gitlab.cheywood.Iotas
