@@ -121,10 +121,7 @@
           -     wl-clipboard
       register: package_install_result
 
-    - name: Install AUR helper collection using Ansible  
-      hosts: localhost
-      tasks:
-      - name: Install AUR helper collection
+    - name: Install AUR helper collection
         ansible.builtin.shell:
           cmd: ansible-galaxy collection install kewlfft.aur
 
