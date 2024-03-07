@@ -140,7 +140,7 @@
         validate: visudo -cf %s
 
     - name: Install yay using makepkg if it is not installed already
-      aur:
+      kewlfft.aur.aur:
         name: yay
         use: makepkg
         state: present
@@ -248,7 +248,7 @@
         dest: /home/tim/.config/wireplumber/main.lua.d/60-alsa-config.lua
         owner: tim
         group: tim
-        
+
     - name: Enable systemd services
       systemd:
         name: '{{ item }}'
