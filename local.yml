@@ -1,124 +1,122 @@
----
 - hosts: localhost
   connection: local
-  become: true # sudo
-
+  become: true
   tasks:
     - name: install packages
       package:
         name:
-          -     adobe-source-han-sans-otc-fonts
-          -     adobe-source-han-serif-otc-fonts
-          -     a52dec
-          -     archlinux-appstream-data
-          -     atuin
-          -     base-devel
-          -     bluez
-          -     bluez-utils
-          -     cliphist
-          -     composer
-          -     curl
-          -     discord
-          -     docker
-          -     docker-compose
-          -     faac
-          -     faad2
-          -     fd
-          -     ffmpeg
-          -     firefox
-          -     fish
-          -     flatpak
-          -     flac
-          -     fwupd
-          -     gcc
-          -     git
-          -     git-lfs
-          -     htop
-          -     hyprland
-          -     intellij-idea-community-edition
-          -     jasper
-          -     jdk-openjdk
-          -     kitty
-          -     lib32-nvidia-utils
-          -     lib32-systemd
-          -     lib32-vulkan-icd-loader
-          -     libdca
-          -     libdv
-          -     libmad
-          -     libmpeg2
-          -     libtheora
-          -     libusb
-          -     libva-utils
-          -     libvorbis
-          -     libxv
-          -     lua
-          -     luarocks
-          -     lame
-          -     man-db
-          -     man-pages
-          -     mbedtls
-          -     mbedtls2
-          -     maven
-          -     nano
-          -     neofetch
-          -     neovim
-          -     networkmanager
-          -     nodejs
-          -     noto-fonts
-          -     noto-fonts-cjk
-          -     noto-fonts-emoji
-          -     npm
-          -     nwg-look
-          -     nvidia-open-dkms
-          -     nvidia-settings
-          -     nvidia-utils
-          -     otf-font-awesome
-          -     opus
-          -     packagekit-qt5
-          -     packagekit-qt6
-          -     pamixer
-          -     pacman-contrib
-          -     perl
-          -     php
-          -     playerctl
-          -     polkit-gnome
-          -     pycharm-community-edition
-          -     python
-          -     python-pip
-          -     python-pynvim
-          -     qt5-base
-          -     qt5-tools
-          -     qt5-wayland
-          -     qt6ct
-          -     qt6-base
-          -     qt6-tools
-          -     qt6-wayland
-          -     ripgrep
-          -     rnote
-          -     rsync
-          -     ruby
-          -     rubygems
-          -     rustup
-          -     steam
-          -     syncthing
-          -     ttf-jetbrains-mono
-          -     ttf-liberation
-          -     tree-sitter
-          -     tree-sitter-cli
-          -     vdpauinfo
-          -     vulkan-icd-loader
-          -     wofi
-          -     wavpack
-          -     wget
-          -     wl-clipboard
-          -     wqy-zenhei
-          -     x264
-          -     x265
-          -     xclip
-          -     xdg-desktop-portal-hyprland
-          -     xvidcore
-          -     waybar
-          -     wl-clipboard
+          - adobe-source-han-sans-otc-fonts
+          - adobe-source-han-serif-otc-fonts
+          - a52dec
+          - archlinux-appstream-data
+          - atuin
+          - base-devel
+          - bluez
+          - bluez-utils
+          - cliphist
+          - composer
+          - curl
+          - discord
+          - docker
+          - docker-compose
+          - faac
+          - faad2
+          - fd
+          - ffmpeg
+          - firefox
+          - fish
+          - flatpak
+          - flac
+          - fwupd
+          - gcc
+          - git
+          - git-lfs
+          - htop
+          - hyprland
+          - intellij-idea-community-edition
+          - jasper
+          - jdk-openjdk
+          - kitty
+          - lib32-nvidia-utils
+          - lib32-systemd
+          - lib32-vulkan-icd-loader
+          - libdca
+          - libdv
+          - libmad
+          - libmpeg2
+          - libtheora
+          - libusb
+          - libva-utils
+          - libvorbis
+          - libxv
+          - lua
+          - luarocks
+          - lame
+          - man-db
+          - man-pages
+          - mbedtls
+          - mbedtls2
+          - maven
+          - nano
+          - neofetch
+          - neovim
+          - networkmanager
+          - nodejs
+          - noto-fonts
+          - noto-fonts-cjk
+          - noto-fonts-emoji
+          - npm
+          - nwg-look
+          - nvidia-open-dkms
+          - nvidia-settings
+          - nvidia-utils
+          - otf-font-awesome
+          - opus
+          - packagekit-qt5
+          - packagekit-qt6
+          - pamixer
+          - pacman-contrib
+          - perl
+          - php
+          - playerctl
+          - polkit-gnome
+          - pycharm-community-edition
+          - python
+          - python-pip
+          - python-pynvim
+          - qt5-base
+          - qt5-tools
+          - qt5-wayland
+          - qt6ct
+          - qt6-base
+          - qt6-tools
+          - qt6-wayland
+          - ripgrep
+          - rnote
+          - rsync
+          - ruby
+          - rubygems
+          - rustup
+          - steam
+          - syncthing
+          - ttf-jetbrains-mono
+          - ttf-liberation
+          - tree-sitter
+          - tree-sitter-cli
+          - vdpauinfo
+          - vulkan-icd-loader
+          - wofi
+          - wavpack
+          - wget
+          - wl-clipboard
+          - wqy-zenhei
+          - x264
+          - x265
+          - xclip
+          - xdg-desktop-portal-hyprland
+          - xvidcore
+          - waybar
+          - wl-clipboard
       register: package_install_result
 
     - name: Install AUR helper collection
@@ -126,32 +124,32 @@
         cmd: ansible-galaxy collection install kewlfft.aur
 
     - name: Create the `aur_builder` user
-      become: yes
+      become: 'yes'
       ansible.builtin.user:
         name: aur_builder
-        create_home: yes
+        create_home: 'yes'
         group: wheel
 
     - name: Allow the `aur_builder` user to run `sudo pacman` without a password
-      become: yes
+      become: 'yes'
       ansible.builtin.lineinfile:
         path: /etc/sudoers.d/11-install-aur_builder
         line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
-        create: yes
-        mode: 0644
-        validate: 'visudo -cf %s'
+        create: 'yes'
+        mode: 420
+        validate: visudo -cf %s
 
     - name: Install yay using makepkg if it is not installed already
       aur:
         name: yay
         use: makepkg
         state: present
-      become: yes
+      become: 'yes'
       become_user: aur_builder
 
-    - name: Upgrade the system using yay, only act on AUR packages.
+    - name: 'Upgrade the system using yay, only act on AUR packages.'
       kewlfft.aur.aur:
-        upgrade: yes
+        upgrade: 'yes'
         use: yay
 
     - name: Install aur packages using yay
@@ -176,11 +174,13 @@
           - webcord
 
     - name: Add Flathub remote
-      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      command: >-
+        flatpak remote-add --if-not-exists flathub
+        https://flathub.org/repo/flathub.flatpakrepo
 
     - name: Install Flatpak applications
       flatpak:
-        name: "{{ item }}"
+        name: '{{ item }}'
         state: present
         remote: flathub
       loop:
@@ -236,7 +236,7 @@
 
     - name: create wireplumber config folder
       file:
-        path: "/home/tim/.config/wireplumber/main.lua.d"
+        path: /home/tim/.config/wireplumber/main.lua.d
         state: directory
         owner: tim
         group: tim
@@ -248,11 +248,11 @@
         dest: /home/tim/.config/wireplumber/main.lua.d/60-alsa-config.lua
         owner: tim
         group: tim
-
+        
     - name: Enable systemd services
       systemd:
-        name: "{{ item }}"
-        enabled: yes
+        name: '{{ item }}'
+        enabled: 'yes'
       loop:
         - avahi-daemon
         - bluetooth
