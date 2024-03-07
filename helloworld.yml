@@ -1,6 +1,6 @@
 ---
 - name: Hello World Playbook
-  hosts: Ansible
+  hosts: all
 
   tasks:
     - name: Print Hello World

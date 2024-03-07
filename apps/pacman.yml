@@ -1,6 +1,6 @@
 ---
 - name: Pacman App Installation Playbook
-  hosts: Ansible
+  hosts: all
 
   tasks:
     - name: install packages

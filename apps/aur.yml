@@ -1,6 +1,6 @@
 ---
 - name: Aur App Installation Playbook
-  hosts: Ansible
+  hosts: all
 
   tasks:
     - name: 'Upgrade the system using yay, only act on AUR packages.'

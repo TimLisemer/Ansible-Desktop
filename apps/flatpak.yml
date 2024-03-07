@@ -1,6 +1,6 @@
 ---
 - name: Flatpak App Installation Playbook
-  hosts: Ansible
+  hosts: all
 
   tasks:
     - name: Remove multiple packages
