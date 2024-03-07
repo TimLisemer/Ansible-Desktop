@@ -128,7 +128,7 @@
       become: true
       ansible.builtin.user:
         name: aur_builder
-        create_home: false
+        create_home: true
         group: wheel
 
     - name: Allow the `aur_builder` user to run `sudo pacman` without a password
