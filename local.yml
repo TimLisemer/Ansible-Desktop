@@ -120,8 +120,8 @@
           -     waybar
           -     wl-clipboard
       register: package_install_result
-      
-    - name: Install AUR helper collection using Ansible
+
+    - name: Install AUR helper collection using Ansible  
       hosts: localhost
       tasks:
       - name: Install AUR helper collection
