@@ -13,6 +13,7 @@
           - adobe-source-han-serif-otc-fonts
           - a52dec
           - archlinux-appstream-data
+          - arduino
           - atuin
           - base-devel
           - bluez
@@ -53,6 +54,7 @@
           - libva-utils
           - libvorbis
           - libxv
+          - llvm
           - lua
           - luarocks
           - lame
