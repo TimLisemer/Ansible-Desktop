@@ -43,6 +43,7 @@
           - intellij-idea-community-edition
           - jasper
           - jdk-openjdk
+          - julia
           - kitty
           - lib32-nvidia-utils
           - lib32-systemd
