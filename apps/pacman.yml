@@ -78,6 +78,7 @@
           - nvidia-settings
           - nvidia-utils
           - otf-font-awesome
+          - opencv
           - opus
           - packagekit-qt5
           - packagekit-qt6
