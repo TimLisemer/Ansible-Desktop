@@ -16,6 +16,9 @@
           - arduino
           - arduino-avr-core
           - atuin
+          - avrdude
+          - avr-gcc
+          - avr-libc
           - base-devel
           - bluez
           - bluez-utils
