@@ -48,6 +48,7 @@
           - jdk-openjdk
           - julia
           - kitty
+          - kscreen
           - lib32-nvidia-utils
           - lib32-systemd
           - lib32-vulkan-icd-loader
@@ -92,6 +93,8 @@
           - pacman-contrib
           - perl
           - php
+          - plasma-desktop
+          - plasma-pa
           - playerctl
           - polkit-gnome
           - pycharm-community-edition
@@ -129,6 +132,7 @@
           - xclip
           - xdg-desktop-portal-hyprland
           - xvidcore
+          - xwaylandvideobridge
           - waybar
           - wl-clipboard
       register: package_install_result
